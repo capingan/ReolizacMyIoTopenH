@@ -1,0 +1,54 @@
+UID: mqtt:topic:mosqutto:AirKitchen
+label: Воздух на кухне
+thingTypeUID: mqtt:topic
+configuration: {}
+bridgeUID: mqtt:broker:mosqutto
+channels:
+  - id: status_air_kirchen
+    channelTypeUID: mqtt:string
+    label: Статус esp на вохдух
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/status/LWT
+  - id: kitchen_temper
+    channelTypeUID: mqtt:number
+    label: Температура на кухне
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/BME280/Temperature
+      unit: °C
+  - id: kitcen_humidity
+    channelTypeUID: mqtt:number
+    label: Влажность на кухне
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/BME280/Humidity
+      unit: °C
+  - id: kitchen_pressure
+    channelTypeUID: mqtt:number
+    label: Давление кухня атм.
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/BME280/Pressure
+      unit: mm Hg
+  - id: kitchen_carbon_dioxide
+    channelTypeUID: mqtt:number
+    label: Углекислый газ на кухне
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/CO2 MH-Z19B/PPM
+      unit: ppm
+  - id: dustiness_kitchen
+    channelTypeUID: mqtt:number
+    label: Запылённость на кухни
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/PMS7003/pm2.5
+      unit: μg/m3
+  - id: gas_pollution_kitchen
+    channelTypeUID: mqtt:number
+    label: Загазованность на кухне
+    description: ""
+    configuration:
+      stateTopic: ESP_Climat_1_1/TVOC_SGP30/TVOC
+      unit: ppb

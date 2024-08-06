@@ -1,0 +1,49 @@
+UID: mqtt:topic:mosqutto:iot_esp_rain
+label: Датчик дождя и др
+thingTypeUID: mqtt:topic
+configuration: {}
+bridgeUID: mqtt:broker:mosqutto
+channels:
+  - id: Status_rain
+    channelTypeUID: mqtt:string
+    label: Статус датчика дождя
+    description: ""
+    configuration:
+      stateTopic: openhabian/IoT_ESP_rai/lwt
+  - id: temperat_za_window_sensor_rain
+    channelTypeUID: mqtt:number
+    label: Температура за окном датчик дождя
+    description: ""
+    configuration:
+      stateTopic: openhabian/IoT_ESP_rai/dsw1
+      unit: °C
+  - id: temper_room_sensor_rain
+    channelTypeUID: mqtt:number
+    label: "Температура в комнате датчик дождя "
+    description: ""
+    configuration:
+      stateTopic: openhabian/IoT_ESP_rai/aht10t
+      unit: °C
+  - id: humidity_room_sensor_rain
+    channelTypeUID: mqtt:number
+    label: Влажность на окне датчик дождя
+    description: ""
+    configuration:
+      formatBeforePublish: "%"
+      stateTopic: openhabian/IoT_ESP_rai/aht10h
+      unit: "%"
+  - id: lighting_za_window_sensor_rain
+    channelTypeUID: mqtt:number
+    label: Освещённость датчик дождя
+    description: ""
+    configuration:
+      stateTopic: openhabian/IoT_ESP_rai/bhl
+      unit: lux
+  - id: drops_sensor_rain
+    channelTypeUID: mqtt:contact
+    label: Капли на датчике дождя
+    description: ""
+    configuration:
+      stateTopic: openhabian/IoT_ESP_rai/gpio14
+      off: "0"
+      on: "1"

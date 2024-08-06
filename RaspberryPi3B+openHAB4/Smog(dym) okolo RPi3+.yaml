@@ -1,0 +1,48 @@
+UID: mqtt:topic:mosqutto:dust_on_RPi3
+label: Дым около RPi3+
+thingTypeUID: mqtt:topic
+configuration: {}
+bridgeUID: mqtt:broker:mosqutto
+channels:
+  - id: sharp_GP2Y10
+    channelTypeUID: mqtt:number
+    label: Датчик пыли GP2Y10
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/Sharp GP2Y10/Dust
+  - id: MotionSensorRCWL0516
+    channelTypeUID: mqtt:number
+    label: Датчик  движения RCWL-0516
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/RCW-05/State
+  - id: DustSensor_DSM501_counter
+    channelTypeUID: mqtt:number
+    label: Датчик пыли JR501or DSM501A-1
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/DSM501A/Count
+  - id: DustSensor_DSM501A_Total
+    channelTypeUID: mqtt:number
+    label: Датчик пыли JR501or DSM501A-2
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/DSM501A/Total
+  - id: DoustSensor_DSM501A_Time
+    channelTypeUID: mqtt:number
+    label: Датчик пыли JR501or DSM501A
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/DSM501A/Time
+  - id: MotionSensor_HC_SR501
+    channelTypeUID: mqtt:number
+    label: Датчик движения HC SR501
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/HC_SR501/State
+  - id: Status_smoke_RPi3
+    channelTypeUID: mqtt:string
+    label: Статус RPi3
+    description: ""
+    configuration:
+      stateTopic: Test_Easy_1/status/LWT
