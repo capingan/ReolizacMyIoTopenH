@@ -1,1 +1,82 @@
-
+UID: mqtt:topic:mosqutto:AC_dimmer_led
+label: АС диммер и led и реле
+thingTypeUID: mqtt:topic
+configuration: {}
+bridgeUID: mqtt:broker:mosqutto
+channels:
+  - id: as_dimmer_1
+    channelTypeUID: mqtt:dimmer
+    label: АС диммер первый
+    description: ""
+    configuration:
+      postCommand: false
+      retained: false
+      min: 0
+      max: 100
+      commandTopic: Dimmer/triac1
+      off: otk
+      on: vkl
+  - id: arduin_relay_triak1
+    channelTypeUID: mqtt:switch
+    label: Ардуино тиристорный ключ
+    description: ""
+    configuration:
+      commandTopic: arduino/relay1
+      off: "0"
+      on: "1"
+  - id: arduin_relay_time
+    channelTypeUID: mqtt:switch
+    label: Ардуино реле времени
+    description: ""
+    configuration:
+      commandTopic: arduino/relay2
+      off: "1"
+      on: "0"
+  - id: arduino_status
+    channelTypeUID: mqtt:string
+    label: Статус Ардуино
+    description: ""
+    configuration:
+      stateTopic: Dimmer/availability
+  - id: arduino_switch1
+    channelTypeUID: mqtt:switch
+    label: Включатель 1
+    description: ""
+    configuration:
+      commandTopic: Dimmer/switch1
+      off: OFF
+      on: ON
+  - id: arduino_switch2
+    channelTypeUID: mqtt:switch
+    label: Включатель 2
+    description: ""
+    configuration:
+      commandTopic: Dimmer/switch2
+      off: OFF
+      on: ON
+  - id: led_lenta_arduino
+    channelTypeUID: mqtt:dimmer
+    label: Светодиодная лента ардуино
+    description: ""
+    configuration:
+      commandTopic: arduino/led
+      max: 100
+      min: 1
+  - id: tempet_arduino_dht22
+    channelTypeUID: mqtt:string
+    label: Температура ардуино dht22
+    description: ""
+    configuration:
+      stateTopic: home/sensor/temp
+  - id: humidity_arduino_dht22
+    channelTypeUID: mqtt:string
+    label: Влажность ардуино dht22
+    description: ""
+    configuration:
+      stateTopic: home/sensor/hum
+  - id: ultrasonic_arduino_HC-SR04
+    channelTypeUID: mqtt:string
+    label: Ульрозвук расстояние
+    description: ""
+    configuration:
+      stateTopic: home/Ultrasonic/Vannaya
